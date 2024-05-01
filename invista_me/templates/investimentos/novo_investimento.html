@@ -6,10 +6,9 @@
     <title>Inserindo Dados</title>
 </head>
 <body>
-    <form action="{% url 'investimento_registrado' %}" method="post">
+    <form action="" method="post">
         {% csrf_token %}
-        <label for="">Tipo de investimento:</label>
-        <input type="text" name="TipoInvestimento">
+        {{ formulario }}
         <button type="submit">Salvar</button>
     </form>
 </body>

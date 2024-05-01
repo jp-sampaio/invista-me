@@ -24,6 +24,8 @@ urlpatterns = [
     path('contato/', views.contato, name='contato'),
     path('bibliografia/', views.bibliografia, name='bibliografia'), 
     path('novo_investimento/', views.novo_investimento, name='novo_investimento'),
-    path('investimento_registrado/', views.investimento_registrado, name='investimento_registrado'), 
-    path('lista_investimentos/', views.lista_investimentos, name='lista_investimentos')
+    # path('investimento_registrado/', views.investimento_registrado, name='investimento_registrado'), 
+    path('lista_investimentos/', views.lista_investimentos, name='lista_investimentos'),
+    path('lista_investimentos/<int:id_investimento>', views.detalhes, name='detalhes'),
+    path('novo_investimentos/<int:id_investimento>', views.editar, name='editar')
 ]

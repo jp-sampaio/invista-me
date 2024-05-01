@@ -4,18 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Investimentos</title>
-
-    <style>
-        body,
-        table { 
-            background-color: lightblue;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <h1>Lista do meus investimentos!</h1>
-
+    <button><a href="{% url 'novo_investimento' %}">Novo Item</a></button>
     <table>
         <tr>
             <th>Id</th>
@@ -32,6 +24,8 @@
             <td>{{ dado.valor }}</td>
             <td>{{ dado.pago }}</td>
             <td>{{ dado.data }}</td>
+            <td><button><a href="{% url 'detalhes' dado.id %}">Detalhes</a></button></td>
+            <td><button><a href="{% url 'editar' dado.id %}">Editar</a></button></td>
         </tr>
         {% endfor %}
     </table>
