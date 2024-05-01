@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Investimentos</title>
+
+    <style>
+        body,
+        table { 
+            background-color: lightblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista do meus investimentos!</h1>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Investimentos</th>
+            <th>Valor</th>
+            <th>Pago</th>
+            <th>Data</th>
+        </tr>
+
+        {% for dado in dados %}
+        <tr>
+            <td>{{ dado.id }}</td>
+            <td>{{ dado.Investimento }}</td>
+            <td>{{ dado.valor }}</td>
+            <td>{{ dado.pago }}</td>
+            <td>{{ dado.data }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
