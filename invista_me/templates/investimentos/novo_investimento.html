@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserindo Dados</title>
+</head>
+<body>
+    <form action="{% url 'investimento_registrado' %}" method="post">
+        {% csrf_token %}
+        <label for="">Tipo de investimento:</label>
+        <input type="text" name="TipoInvestimento">
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>
