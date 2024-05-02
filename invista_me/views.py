@@ -20,20 +20,7 @@ def bibliografia(request):
 
     return render(request, 'investimentos/bibliografia.html', pessoa)
 
-def novo_investimento(request):
 
-    if request.method == 'POST':
-        investimentos_form = InvestimentosForm(request.POST)
-        if investimentos_form.is_valid():
-            investimentos_form.save()
-        return redirect('lista_investimentos')
-    else:
-        investimentos_form = InvestimentosForm()
-        formulario = { 
-            'formulario': investimentos_form
-        }
-
-        return render(request, 'investimentos/novo_investimento.html', context=formulario)
 
 # def investimento_registrado(request): 
 #     investimento = {
@@ -58,6 +45,23 @@ def detalhes(request, id_investimento):
 
     return render(request, 'investimentos/detalhes.html', dados)
 
+
+def novo_investimento(request):
+
+    if request.method == 'POST':
+        investimentos_form = InvestimentosForm(request.POST)
+        if investimentos_form.is_valid():
+            investimentos_form.save()
+        return redirect('lista_investimentos')
+    else:
+        investimentos_form = InvestimentosForm()
+        formulario = { 
+            'formulario': investimentos_form
+        }
+
+        return render(request, 'investimentos/novo_investimento.html', context=formulario)
+
+        
 
 def editar(request, id_investimento):
     investimentos = Investimentos.objects.get(pk=id_investimento)
