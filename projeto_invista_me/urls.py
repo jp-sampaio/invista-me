@@ -27,5 +27,6 @@ urlpatterns = [
     # path('investimento_registrado/', views.investimento_registrado, name='investimento_registrado'), 
     path('lista_investimentos/', views.lista_investimentos, name='lista_investimentos'),
     path('lista_investimentos/<int:id_investimento>', views.detalhes, name='detalhes'),
-    path('novo_investimentos/<int:id_investimento>', views.editar, name='editar')
+    path('novo_investimentos/<int:id_investimento>', views.editar, name='editar'),
+    path('excluir_investimento/<int:id_investimento>', views.excluir, name='excluir')
 ]

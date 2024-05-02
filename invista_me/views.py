@@ -76,3 +76,13 @@ def editar(request, id_investimento):
             formulario.save()
         
         return redirect('lista_investimentos')
+
+
+def excluir(request, id_investimento):
+    investimento = Investimentos.objects.get(pk=id_investimento)
+
+    if request.method == 'POST':
+        investimento.delete()
+        return redirect('lista_investimentos')
+        
+    return render(request, 'investimentos/confirmar_exclusao.html', {'item': investimento})

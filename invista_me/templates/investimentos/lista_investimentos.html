@@ -26,6 +26,7 @@
             <td>{{ dado.data }}</td>
             <td><button><a href="{% url 'detalhes' dado.id %}">Detalhes</a></button></td>
             <td><button><a href="{% url 'editar' dado.id %}">Editar</a></button></td>
+            <td><button><a href="{% url 'excluir' dado.id %}">Excluir</a></button></td>
         </tr>
         {% endfor %}
     </table>
