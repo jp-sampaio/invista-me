@@ -6,24 +6,32 @@
     <title>Detalhes</title>
 </head>
 <body>
-    <h1>Detalhes dos Items</h1>
 
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Investimentos</th>
-            <th>Valor</th>
-            <th>Pago</th>
-            <th>Data</th>
-        </tr>
+    {% extends 'investimentos/base.html' %}
+    {% block conteudo %}
 
-        <tr>
-            <td>{{ dados.id }}</td>
-            <td>{{ dados.Investimento }}</td>
-            <td>{{ dados.valor }}</td>
-            <td>{{ dados.pago }}</td>
-            <td>{{ dados.data }}</td>
-        </tr>
-    </table>
+    <div class="container">
+        <h1 style="text-align: center;">Detalhes dos Items</h1>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Investimentos</th>
+                <th>Valor</th>
+                <th>Pago</th>
+                <th>Data</th>
+            </tr>
+    
+            <tr>
+                <td>{{ dados.id }}</td>
+                <td>{{ dados.Investimento }}</td>
+                <td>{{ dados.valor }}</td>
+                <td>{{ dados.pago }}</td>
+                <td>{{ dados.data }}</td>
+            </tr>
+        </table>
+    </div>
+
+    {% endblock %}
+
 </body>
 </html>
