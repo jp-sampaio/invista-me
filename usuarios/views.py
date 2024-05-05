@@ -15,7 +15,7 @@ def novo_usuario(request):
             # Existe outros tipos de messagem, e não somente essa de sucesso 
             messages.success(request, f'O usuário {usuario} foi criado com sucesso!')  
 
-            return redirect('lista_investimentos')
+            return redirect('login')
     
     else:
         formulario = UserRegisterForm()

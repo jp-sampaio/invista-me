@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from invista_me import views as invista_me_views
 from usuarios import views as usuarios_views
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -29,5 +30,7 @@ urlpatterns = [
     path('novo_investimento/', invista_me_views.novo_investimento, name='novo_investimento'),
     path('novo_investimentos/<int:id_investimento>', invista_me_views.editar, name='editar'),
     path('excluir_investimento/<int:id_investimento>', invista_me_views.excluir, name='excluir'),
-    path('conta/', usuarios_views.novo_usuario, name='novo_usuario')
+    path('conta/', usuarios_views.novo_usuario, name='novo_usuario'),
+    path('login/', auth_views.LoginView.as_view(template_name='usuarios/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name='logout')
 ]

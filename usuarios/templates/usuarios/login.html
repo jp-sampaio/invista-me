@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Novo Usuário</title>
+    <title>Login</title>
 </head>
 <body>
     {% extends 'Investimentos/base.html' %}               
     {% block conteudo %}  
     {% load crispy_forms_tags %}      
 
-    <div class="container">
-        <h1>Cadastrar novo usuário</h1>
+    <div class="container" style="padding: 30px;">
+        <h1>Login</h1>
         <form method="post">
             {% csrf_token %}
-            {{ formulario | crispy }}
-            <button class="btn btn-primary" type="submit">Criar novo usuário</button>
-            <span>Já possui uma conta? <a href="{% url 'login' %}">Entre aqui</a></span>
+            {{ form | crispy }}
+            <button class="btn btn-primary" type="submit">Fazer Login</button>
+            <span>Não possui uma conta? <a href="{% url 'novo_usuario' %}">Faça o cadastro aqui.</a></span>
         </form>
     </div>
 
