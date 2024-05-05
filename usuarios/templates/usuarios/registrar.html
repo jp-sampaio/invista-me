@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Novo Usuário</title>
+</head>
+<body>
+    {% extends 'Investimentos/base.html' %}               
+    {% block conteudo %}  
+    {% load crispy_forms_tags %}      
+
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ formulario | crispy }}
+            <button class="btn btn-primary" type="submit">Criar novo usuário</button>
+            <span>Já possui uma conta? <a href="#">Entre aqui</a></span>
+        </form>
+    </div>
+
+    {% endblock %}
+</body>
+</html>

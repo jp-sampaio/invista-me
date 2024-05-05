@@ -16,17 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from invista_me import views
+from invista_me import views as invista_me_views
+from usuarios import views as usuarios_views
+
 
 urlpatterns = [
-    path('', views.pagina_inicial),
+    path('', invista_me_views.pagina_inicial),
     path('admin/', admin.site.urls),
-    path('contato/', views.contato, name='contato'),
-    path('bibliografia/', views.bibliografia, name='bibliografia'), 
-    path('novo_investimento/', views.novo_investimento, name='novo_investimento'),
-    # path('investimento_registrado/', views.investimento_registrado, name='investimento_registrado'), 
-    path('lista_investimentos/', views.lista_investimentos, name='lista_investimentos'),
-    path('lista_investimentos/<int:id_investimento>', views.detalhes, name='detalhes'),
-    path('novo_investimentos/<int:id_investimento>', views.editar, name='editar'),
-    path('excluir_investimento/<int:id_investimento>', views.excluir, name='excluir')
+    path('contato/', invista_me_views.contato, name='contato'),
+    path('lista_investimentos/', invista_me_views.lista_investimentos, name='lista_investimentos'),
+    path('lista_investimentos/<int:id_investimento>', invista_me_views.detalhes, name='detalhes'),
+    path('novo_investimento/', invista_me_views.novo_investimento, name='novo_investimento'),
+    path('novo_investimentos/<int:id_investimento>', invista_me_views.editar, name='editar'),
+    path('excluir_investimento/<int:id_investimento>', invista_me_views.excluir, name='excluir'),
+    path('conta/', usuarios_views.novo_usuario, name='novo_usuario')
 ]
