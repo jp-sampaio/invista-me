@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from .models import Investimentos
 from .forms import InvestimentosForm
 from django.contrib.auth.decorators import login_required
@@ -7,10 +7,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def pagina_inicial(request):
-    return HttpResponse('Pronto para começar a investir!')
-
-def contato(request):
-    return HttpResponse('Para dúvidas, entrar em contato pelo e-mail jpsampaio@gmail.com')
+    return render(request, 'investimentos/pagina_inicial.html')
 
 
 def lista_investimentos(request):

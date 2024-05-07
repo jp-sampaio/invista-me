@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    {% extends 'investimentos/base.html' %}
+    {% block conteudo %}
+    {% load crispy_forms_tags %}      
+
+    <div class="content" style="margin-top: 200px;">
+        <h1 style="text-align: center;">Vamos iniciar os investimentos ?</h1>
+        <form action="{% url 'lista_investimentos' %}" method="post" style="text-align: center; margin-top: 20px;">
+            {% csrf_token %}
+            <button class="btn btn-warning">Visualizar Lista Investimentos</button>
+        </form>
+    </div>
+    
+    {% endblock %}
+</body>
+</html>

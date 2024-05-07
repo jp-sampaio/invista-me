@@ -22,9 +22,8 @@ from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
-    path('', invista_me_views.pagina_inicial),
+    path('', invista_me_views.pagina_inicial, name='home'),
     path('admin/', admin.site.urls),
-    path('contato/', invista_me_views.contato, name='contato'),
     path('lista_investimentos/', invista_me_views.lista_investimentos, name='lista_investimentos'),
     path('lista_investimentos/<int:id_investimento>', invista_me_views.detalhes, name='detalhes'),
     path('novo_investimento/', invista_me_views.novo_investimento, name='novo_investimento'),
